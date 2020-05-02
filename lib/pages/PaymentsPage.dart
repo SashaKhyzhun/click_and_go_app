@@ -22,9 +22,9 @@ class _PaymentsPageState extends State<PaymentsPage> {
             Text(
               "Click&Go | Оплата",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
             ),
             Icon(
               Icons.menu,
@@ -36,26 +36,24 @@ class _PaymentsPageState extends State<PaymentsPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Expanded(
-                flex: 11,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-
-                  ],
+            color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Expanded(
+                  flex: 11,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[],
+                  ),
                 ),
-              ),
-              Expanded(flex: 1, child: ShoppingBottomLayout(price: 0.0))
-            ],
-          )),
+                Expanded(flex: 1, child: ShoppingBottomLayout(price: 0.0))
+              ],
+            )),
       ),
     );
   }
