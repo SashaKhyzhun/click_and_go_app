@@ -1,3 +1,4 @@
+import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -35,7 +36,7 @@ class _ScanPageState extends State<ScanPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          color: Colors.brown,
+          color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +69,7 @@ class _ScanPageState extends State<ScanPage> {
                               )
                             ),
                             child: Icon(
-                              Icons.camera_alt,
+                              Icons.crop_free,
                               size: 60,
                               color: Colors.white
                             ),
@@ -81,43 +82,8 @@ class _ScanPageState extends State<ScanPage> {
               ),
               Expanded(
                 flex: 1,
-                child: Material(
-                  color: Colors.blueAccent,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Text(
-                        "товаров на сумму:",
-                        textAlign: TextAlign.end,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                        child: Text(
-                          "0.00",
-                          textAlign: TextAlign.end,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
-                      )
-
-                    ],
-                  ),
-                ),
-              ),
+                child: ShoppingBottomLayout(price: 0.0)
+              )
             ],
           )
         ),

@@ -1,4 +1,6 @@
+import 'package:clickandgoapp/pages/PaymentsPage.dart';
 import 'package:clickandgoapp/pages/ScanPage.dart';
+import 'package:clickandgoapp/pages/ShoppingPage.dart';
 import 'package:flutter/material.dart';
 
 class HomeBottomNavigationController extends StatefulWidget {
@@ -10,8 +12,8 @@ class HomeBottomNavigationController extends StatefulWidget {
 class _HomeBottomNavigationControllerState extends State<HomeBottomNavigationController> {
   final List<Widget> pages = [
     ScanPage(),
-    ScanPage(),
-    ScanPage(),
+    ShoppingPage(),
+    PaymentsPage(),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
@@ -37,7 +39,7 @@ class _HomeBottomNavigationControllerState extends State<HomeBottomNavigationCon
     showUnselectedLabels: true,
     items: <BottomNavigationBarItem>[
       BottomNavigationBarItem(
-          icon: Icon(Icons.camera_alt),
+          icon: Icon(Icons.crop_free),
           title: Text('Сканировать')
       ),
       BottomNavigationBarItem(

@@ -1,3 +1,4 @@
+import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -35,13 +36,26 @@ class _PaymentsPageState extends State<PaymentsPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          color: Colors.brown,
+          color: Colors.white,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
+              Expanded(
+                flex: 11,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
 
+                  ],
+                ),
+              ),
+              Expanded(flex: 1, child: ShoppingBottomLayout(price: 0.0))
             ],
-          )
-        ),
+          )),
       ),
     );
   }
