@@ -11,6 +11,9 @@ class ScanPage extends StatefulWidget {
 }
 
 class _ScanPageState extends State<ScanPage> {
+
+  ShoppingRepository repository = ShoppingRepository();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,9 +75,7 @@ class _ScanPageState extends State<ScanPage> {
                                   child: InkWell(
                                     onTap: () {
                                       var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
-                                      ShoppingRepository repository = ShoppingRepository();
                                       repository.save(item);
-
                                     },
                                     borderRadius: BorderRadius.circular(90),
                                     splashColor: Colors.teal,
@@ -97,7 +98,7 @@ class _ScanPageState extends State<ScanPage> {
                 Expanded(
                   flex: 1,
                   child: ShoppingBottomLayout(price: 0.0)
-                )
+                ),
               ],
             )),
       ),

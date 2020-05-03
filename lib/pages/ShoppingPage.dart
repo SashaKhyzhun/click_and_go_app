@@ -1,13 +1,6 @@
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
-import 'package:clickandgoapp/controllers/PersonDesSer.dart';
-import 'package:clickandgoapp/data/models/ShoppingItem.dart';
-import 'package:clickandgoapp/data/repository/SharedPref.dart';
-import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gson/gson.dart';
-import 'package:pref_dessert/pref_dessert_internal.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class ShoppingPage extends StatefulWidget {
   @override
@@ -89,19 +82,3 @@ class _ShoppingPageState extends State<ShoppingPage> {
     );
   }
 }
-
-//_showSavedItems() async {
-////  SharedPreferences sp = await SharedPreferences.getInstance();
-////  var jsonResult = sp.getString("qwerty");
-////  var data = Gson().decode(jsonResult);
-////  print("saved = "+ data);
-//
-//  ShoppingRepository repository = ShoppingRepository();
-//  var data = repository.getAll();
-//
-//  data.map((item) => {
-//    print("saved data: ${item.title}")
-//  });
-//
-//
-//}

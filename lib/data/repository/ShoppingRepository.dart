@@ -1,4 +1,5 @@
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
+import 'package:flutter/foundation.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ShoppingRepository {
@@ -15,29 +16,23 @@ class ShoppingRepository {
 
   ShoppingRepository._internal();
 
-  final subject = BehaviorSubject<List<ShoppingItem>>();
+  final data = List<ShoppingItem>();
 
   /*
    * Control the data
    */
 
-  save(ShoppingItem item) {
-    var previous = List<ShoppingItem>();
-    print("save | previous before = ${previous.length}");
-    subject.map((m) => {
-      previous.addAll(m)
-    });
-    print("save | previous after  = ${previous.length}");
-    previous.add(item);
-    print("save | previous + 1    = ${previous.length}");
-    subject.add(previous);
+  List<ShoppingItem> getAll() {
+    return data;
+  }
 
+  save(ShoppingItem item) {
+    data.add(item);
   }
 
   deleteAll() {
-    subject.map((m) => {
-      m.clear()
-    });
+    data.clear();
   }
+
 
 }
