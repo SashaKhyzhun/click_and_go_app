@@ -9,20 +9,31 @@ void main() => runApp(MyApp());
 class AppState with ChangeNotifier {
 
   ShoppingRepository shoppingCartRepository;
-  double _total;
+  double _totalPrice;
+  int _totalAmount;
 
   AppState() {
     this.shoppingCartRepository = ShoppingRepository();
-    this._total = shoppingCartRepository.getTotal();
+    this._totalPrice = shoppingCartRepository.getTotal();
+    this._totalAmount = shoppingCartRepository.getTotalElements();
   }
 
-  get total => _total;
+  get totalPrice => _totalPrice;
+  get totalAmount => _totalAmount;
 
-  set total(double val) => _total = val;
+  set totalPrice(double val) => _totalPrice = val;
+  set totalAmount(int val) => _totalAmount = val;
 
   void saveItem(ShoppingItem item) {
     this.shoppingCartRepository.save(item);
-    this.total = this.shoppingCartRepository.getTotal();
+    this.totalPrice = this.shoppingCartRepository.getTotal();
+    this.totalAmount = this.shoppingCartRepository.getTotalElements();
+  }
+
+  void clearItems() {
+    this.shoppingCartRepository.deleteAll();
+    this.totalPrice = this.shoppingCartRepository.getTotal();
+    this.totalAmount = this.shoppingCartRepository.getTotalElements();
   }
 }
 

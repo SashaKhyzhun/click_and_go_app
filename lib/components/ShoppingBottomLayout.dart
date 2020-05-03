@@ -44,7 +44,7 @@ class ShoppingBottomLayoutState extends State<ShoppingBottomLayout> {
           Padding(
             padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
             child: Text(
-              "\$${appState.total.toStringAsFixed(2)}",
+              "\$${appState.totalPrice.toStringAsFixed(2)}",
               textAlign: TextAlign.end,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,

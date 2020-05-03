@@ -33,6 +33,10 @@ class ShoppingRepository {
     return data.map((f){return f.price;}).fold(0.0, (previous, current) => previous + current);
   }
 
+  int getTotalElements() {
+    return data.length;
+  }
+
   save(ShoppingItem item) {
     data.add(item);
   }
