@@ -104,7 +104,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       appState.shoppingCartRepository.data),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 8, 16, 8),
+                        padding: EdgeInsets.fromLTRB(0, 8, 24, 8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
