@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
 import 'package:flutter/material.dart';
@@ -75,9 +77,10 @@ class _ScanPageState extends State<ScanPage> {
                                   borderRadius: BorderRadius.circular(90),
                                   child: InkWell(
                                     onTap: () {
-                                      var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
                                       setState(() {
-                                        appState.saveItem(item);
+                                        appState.saveItem(
+                                          _getRandomShoppingElement()
+                                        );
                                       });
                                     },
                                     borderRadius: BorderRadius.circular(90),
@@ -107,4 +110,10 @@ class _ScanPageState extends State<ScanPage> {
       ),
     );
   }
+}
+
+ShoppingItem _getRandomShoppingElement() {
+  var list = ShoppingItem.mockShoppingList;
+  final _random = new Random();
+  return list[_random.nextInt(list.length)];
 }
