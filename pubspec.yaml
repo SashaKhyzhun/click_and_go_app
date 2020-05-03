@@ -26,6 +26,9 @@ dependencies:
   flutter_svg: 0.17.4
   fluttertoast: 4.0.1
   shared_preferences: 0.5.7
+  gson: 0.1.4
+  pref_dessert: 0.5.1
+
 
 dev_dependencies:
   flutter_test:

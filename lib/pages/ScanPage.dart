@@ -1,7 +1,15 @@
+import 'dart:convert';
+
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
+import 'package:clickandgoapp/controllers/PersonDesSer.dart';
+import 'package:clickandgoapp/data/models/ShoppingItem.dart';
+import 'package:clickandgoapp/data/repository/SharedPref.dart';
+import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gson/gson.dart';
+import 'package:pref_dessert/pref_dessert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ScanPage extends StatefulWidget {
@@ -100,8 +108,17 @@ class _ScanPageState extends State<ScanPage> {
 
 
 _incrementCounter() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  int counter = (prefs.getInt('counter') ?? 0) + 1;
-  print('Pressed $counter times.');
-  await prefs.setInt('counter', counter);
+//  var dataList = List<ShoppingItem>();
+//  var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
+//  dataList.add(item);
+//
+//  SharedPreferences sp = await SharedPreferences.getInstance();
+//  await sp.setString("qwerty", Gson().encode(dataList));
+
+  var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
+  ShoppingRepository repository = ShoppingRepository();
+  ShoppingRepository repository2 = ShoppingRepository();
+  print("repo == repo2 is: ${repository == repository2}");
+
+  repository.save(item);
 }
