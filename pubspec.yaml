@@ -14,7 +14,7 @@ description: Application for scanning products in the store and online payment (
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,6 +28,7 @@ dependencies:
   shared_preferences: 0.5.7
   gson: 0.1.4
   pref_dessert: 0.5.1
+  rxdart: 0.24.0
 
 
 dev_dependencies:

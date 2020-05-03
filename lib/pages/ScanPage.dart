@@ -1,18 +1,11 @@
-import 'dart:convert';
-
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
-import 'package:clickandgoapp/controllers/PersonDesSer.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
-import 'package:clickandgoapp/data/repository/SharedPref.dart';
 import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gson/gson.dart';
-import 'package:pref_dessert/pref_dessert.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class ScanPage extends StatefulWidget {
+
   @override
   _ScanPageState createState() => new _ScanPageState();
 }
@@ -78,7 +71,10 @@ class _ScanPageState extends State<ScanPage> {
                                   borderRadius: BorderRadius.circular(90),
                                   child: InkWell(
                                     onTap: () {
-                                      _incrementCounter();
+                                      var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
+                                      ShoppingRepository repository = ShoppingRepository();
+                                      repository.save(item);
+
                                     },
                                     borderRadius: BorderRadius.circular(90),
                                     splashColor: Colors.teal,
@@ -98,27 +94,13 @@ class _ScanPageState extends State<ScanPage> {
                     ],
                   ),
                 ),
-                Expanded(flex: 1, child: ShoppingBottomLayout(price: 0.0))
+                Expanded(
+                  flex: 1,
+                  child: ShoppingBottomLayout(price: 0.0)
+                )
               ],
             )),
       ),
     );
   }
-}
-
-
-_incrementCounter() async {
-//  var dataList = List<ShoppingItem>();
-//  var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
-//  dataList.add(item);
-//
-//  SharedPreferences sp = await SharedPreferences.getInstance();
-//  await sp.setString("qwerty", Gson().encode(dataList));
-
-  var item = ShoppingItem(id: 0, title: "Moloko", price: 35.99, amount: 1, totalPrice: 35.99);
-  ShoppingRepository repository = ShoppingRepository();
-  ShoppingRepository repository2 = ShoppingRepository();
-  print("repo == repo2 is: ${repository == repository2}");
-
-  repository.save(item);
 }

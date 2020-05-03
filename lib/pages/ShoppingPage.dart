@@ -64,7 +64,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                           borderRadius: BorderRadius.circular(90),
                           child: InkWell(
                             onTap: () {
-                              _showSavedItems();
+                              //_showSavedItems();
                             },
                             borderRadius: BorderRadius.circular(90),
                             splashColor: Colors.teal,
@@ -90,14 +90,18 @@ class _ShoppingPageState extends State<ShoppingPage> {
   }
 }
 
-_showSavedItems() async {
-//  SharedPreferences sp = await SharedPreferences.getInstance();
-//  var jsonResult = sp.getString("qwerty");
-//  var data = Gson().decode(jsonResult);
-//  print("saved = "+ data);
-
-  ShoppingRepository repository = ShoppingRepository();
-  var data = repository.getAll();
-  print("saved data: ${data.length}");
-
-}
+//_showSavedItems() async {
+////  SharedPreferences sp = await SharedPreferences.getInstance();
+////  var jsonResult = sp.getString("qwerty");
+////  var data = Gson().decode(jsonResult);
+////  print("saved = "+ data);
+//
+//  ShoppingRepository repository = ShoppingRepository();
+//  var data = repository.getAll();
+//
+//  data.map((item) => {
+//    print("saved data: ${item.title}")
+//  });
+//
+//
+//}

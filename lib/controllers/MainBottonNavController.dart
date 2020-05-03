@@ -1,9 +1,11 @@
+import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:clickandgoapp/pages/PaymentsPage.dart';
 import 'package:clickandgoapp/pages/ScanPage.dart';
 import 'package:clickandgoapp/pages/ShoppingPage.dart';
 import 'package:flutter/material.dart';
 
 class HomeBottomNavigationController extends StatefulWidget {
+
   @override
   _HomeBottomNavigationControllerState createState() =>
       _HomeBottomNavigationControllerState();
