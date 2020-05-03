@@ -22,7 +22,6 @@ class ShoppingBottomLayoutState extends State<ShoppingBottomLayout> {
 
   @override
   Widget build(BuildContext context) {
-    double price = Provider.of<AppState>(context).total;
     final appState = Provider.of<AppState>(context);
 
     return Material(

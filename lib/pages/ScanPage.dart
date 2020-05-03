@@ -1,6 +1,5 @@
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
-import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
