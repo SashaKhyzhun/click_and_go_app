@@ -1,8 +1,10 @@
 import 'dart:math';
 
+import 'package:barcode_scan/barcode_scan.dart';
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import '../Main.dart';
@@ -15,6 +17,38 @@ class ScanPage extends StatefulWidget {
 
 class _ScanPageState extends State<ScanPage> {
 
+  String barcode = "";
+  @override
+  void initState(){
+    super.initState();
+  }
+  Future scan() async {
+    try {
+      var barcode = await BarcodeScanner.scan();
+      setState(() {
+        this.barcode = barcode.rawContent;
+        print("code=${this.barcode}");
+      });
+    } on PlatformException catch(e) {
+      if (e.code == BarcodeScanner.cameraAccessDenied) {
+        setState(() {
+          this.barcode = 'Camera Permission not granted';
+        });
+      } else {
+        setState(() {
+          this.barcode = 'Unkown error: $e';
+        });
+      }
+    } on FormatException {
+      setState(() {
+        this.barcode = 'null (User returned using the "back"-button before scanning anything, Result)';
+      });
+    }catch (e) {
+      setState(() {
+        this.barcode = 'Unkown error: $e';
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,11 +111,22 @@ class _ScanPageState extends State<ScanPage> {
                                   borderRadius: BorderRadius.circular(90),
                                   child: InkWell(
                                     onTap: () {
+//                                      setState(() {
+//                                        appState.saveItem(
+//                                          _getRandomShoppingElement()
+//                                        );
+//                                      });
+
+                                    scan().then((value) => {
+                                      print("then block called!"),
                                       setState(() {
                                         appState.saveItem(
                                           _getRandomShoppingElement()
                                         );
-                                      });
+                                      })
+                                    });
+
+
                                     },
                                     borderRadius: BorderRadius.circular(90),
                                     splashColor: Colors.teal,

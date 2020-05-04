@@ -31,6 +31,10 @@ dependencies:
   pref_dessert: 0.5.1
   rxdart: 0.24.0
 
+  camera:
+  path_provider:
+  path:
+  barcode_scan: 3.0.0
 
 dev_dependencies:
   flutter_test:
