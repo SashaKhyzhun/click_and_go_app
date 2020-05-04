@@ -1,10 +1,10 @@
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
+import 'package:clickandgoapp/pages/DrawerOverlay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../Main.dart';
-import 'MyDrawer.dart';
 
 class PaymentsPage extends StatefulWidget {
   @override
@@ -36,10 +36,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
             ),
             InkWell(
               onTap: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyDrawer()),
-                )
+                Navigator.of(context).push(DrawerOverlay())
               },
               child: Icon(
                 Icons.menu,

@@ -2,8 +2,7 @@ import 'package:clickandgoapp/Main.dart';
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:clickandgoapp/components/SliverShoppingListItem.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
-import 'package:clickandgoapp/pages/MyDrawer.dart';
-import 'package:clickandgoapp/pages/PaymentsPage.dart';
+import 'package:clickandgoapp/pages/DrawerOverlay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -43,10 +42,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
             ),
             InkWell(
               onTap: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyDrawer()),
-                )
+                Navigator.of(context).push(DrawerOverlay())
               },
               child: Icon(
                 Icons.menu,
