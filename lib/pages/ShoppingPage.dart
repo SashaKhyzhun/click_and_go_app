@@ -16,13 +16,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    var titlePlural = "Товаров";
-
-    if (appState.totalAmount == 1) {
-      titlePlural = "товар";
-    } else {
-      titlePlural = "товаров(ов)";
-    }
+    var titlePlural = "товар ${ appState.totalAmount == 1 ? "": "(ов)" }";
 
     return Scaffold(
       appBar: AppBar(
@@ -136,7 +130,11 @@ class _ShoppingPageState extends State<ShoppingPage> {
                         child: Container(
                           color: Colors.blueAccent,
                           child: InkWell(
-                            onTap: () => {
+                            onTap: ()  {
+                              print("something");
+                              setState(() {
+                                appState.changeBottomPage(2);
+                              });
 //                              Navigator.push(
 //                                context,
 //                                MaterialPageRoute(builder: (context) => MyDrawer()),

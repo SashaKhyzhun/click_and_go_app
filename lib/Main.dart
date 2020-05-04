@@ -10,6 +10,7 @@ void main() => runApp(MyApp());
 class AppState with ChangeNotifier {
 
   ShoppingRepository shoppingCartRepository;
+  int _currentPage = 0;
   double _totalPrice;
   int _totalAmount;
 
@@ -21,9 +22,15 @@ class AppState with ChangeNotifier {
 
   get totalPrice => _totalPrice;
   get totalAmount => _totalAmount;
+  get currentPage => _currentPage;
 
   set totalPrice(double val) => _totalPrice = val;
   set totalAmount(int val) => _totalAmount = val;
+  set currentPage(int val) => _currentPage = val;
+
+  void changeBottomPage(int index) {
+    this.currentPage = index;
+  }
 
   void saveItem(ShoppingItem item) {
     this.shoppingCartRepository.save(item);
@@ -45,12 +52,23 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AppState(),
       child: MaterialApp(
-        theme: ThemeData(
+      theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeBottomNavigationController(),
+        home: SplashScreen(),
       ),
     );
+
+
+//      ChangeNotifierProvider(
+//      create: (_) => AppState(),
+//      child: MaterialApp(
+//        theme: ThemeData(
+//          primarySwatch: Colors.blue,
+//        ),
+//        home: HomeBottomNavigationController(),
+//      ),
+//    );
   }
 }
 

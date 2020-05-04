@@ -23,7 +23,7 @@ class ShoppingBottomLayoutState extends State<ShoppingBottomLayout> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-
+    print("ShoppingBottomLayoutState");
     return Material(
       color: Colors.blueAccent,
       child: Row(

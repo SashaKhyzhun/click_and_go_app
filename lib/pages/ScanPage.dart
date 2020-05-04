@@ -73,13 +73,13 @@ class _ScanPageState extends State<ScanPage> {
                   fontWeight: FontWeight.bold),
             ),
             InkWell(
-              onTap: () => {
+              onTap: ()  {
 //                Navigator.push(
 //                  context,
 //                  MaterialPageRoute(builder: (context) => MyDrawer()),
 //                )
 
-                Navigator.of(context).push(DrawerOverlay())
+                Navigator.of(context).push(DrawerOverlay());
               },
               child: Icon(
                 Icons.menu,
@@ -124,12 +124,17 @@ class _ScanPageState extends State<ScanPage> {
                                   borderRadius: BorderRadius.circular(90),
                                   child: InkWell(
                                     onTap: () {
-                                      scan().then((value) => {
-                                            setState(() {
+                                      setState(() {
+                                        appState.changeBottomPage(1);
                                               appState.saveItem(
                                                   _getRandomShoppingElement());
-                                            })
-                                          });
+                                      });
+//                                      scan().then((value) => {
+//                                            setState(() {
+//                                              appState.saveItem(
+//                                                  _getRandomShoppingElement());
+//                                            })
+//                                          });
                                     },
                                     borderRadius: BorderRadius.circular(90),
                                     splashColor: Colors.teal,
