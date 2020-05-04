@@ -2,6 +2,8 @@ import 'package:clickandgoapp/Main.dart';
 import 'package:clickandgoapp/components/ShoppingBottomLayout.dart';
 import 'package:clickandgoapp/components/SliverShoppingListItem.dart';
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
+import 'package:clickandgoapp/pages/MyDrawer.dart';
+import 'package:clickandgoapp/pages/PaymentsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -39,9 +41,17 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 fontSize: 18,
                 fontWeight: FontWeight.bold),
             ),
-            Icon(
-              Icons.menu,
-              color: Colors.white,
+            InkWell(
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyDrawer()),
+                )
+              },
+              child: Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
             )
           ],
         ),
@@ -126,12 +136,15 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       )),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(64, 8, 64, 8),
+                        padding: EdgeInsets.fromLTRB(48, 8, 48, 8),
                         child: Container(
                           color: Colors.blueAccent,
                           child: InkWell(
                             onTap: () => {
-
+//                              Navigator.push(
+//                                context,
+//                                MaterialPageRoute(builder: (context) => MyDrawer()),
+//                              )
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

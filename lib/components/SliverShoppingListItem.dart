@@ -45,7 +45,7 @@ class _SliverShoppingListItemState extends State<SliverShoppingListItem> {
               Expanded(
                 flex: 2,
                 child: Text(
-                  widget.item.totalPrice.toString(),
+                  widget.item.totalPrice.toStringAsFixed(2),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )
               ),

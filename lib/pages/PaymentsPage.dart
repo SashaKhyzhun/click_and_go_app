@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../Main.dart';
+import 'MyDrawer.dart';
 
 class PaymentsPage extends StatefulWidget {
   @override
@@ -33,9 +34,17 @@ class _PaymentsPageState extends State<PaymentsPage> {
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),
-            Icon(
-              Icons.menu,
-              color: Colors.white,
+            InkWell(
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyDrawer()),
+                )
+              },
+              child: Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
             )
           ],
         ),
