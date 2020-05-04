@@ -1,5 +1,6 @@
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
 import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
+import 'package:clickandgoapp/pages/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'controllers/MainBottonNavController.dart';
 import 'package:provider/provider.dart';
