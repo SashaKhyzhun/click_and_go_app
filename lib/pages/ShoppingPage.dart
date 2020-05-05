@@ -131,7 +131,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                           color: Colors.blueAccent,
                           child: InkWell(
                             onTap: ()  {
-                              print("something");
+                              print("click go to payment");
                               setState(() {
                                 appState.changeBottomPage(2);
                               });

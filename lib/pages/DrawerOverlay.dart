@@ -1,5 +1,7 @@
+import 'package:clickandgoapp/Main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
 class DrawerOverlay extends ModalRoute<void> {
   @override
@@ -37,6 +39,8 @@ class DrawerOverlay extends ModalRoute<void> {
   }
 
   Widget _buildOverlayContent(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+
     return Center(
       child: Row(
         children: <Widget>[
@@ -63,7 +67,11 @@ class DrawerOverlay extends ModalRoute<void> {
                     children: <Widget>[
                       Container(
                         child: InkWell(
-                          onTap: () => { print("clicked 1")},
+                          onTap: () {
+                            setState() {
+                              appState.currentPage(0);
+                            }
+                          },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,7 +108,11 @@ class DrawerOverlay extends ModalRoute<void> {
                       ),
                       Container(
                         child: InkWell(
-                          onTap: () => { print("clicked 2")},
+                          onTap: () {
+                            setState() {
+                              appState.currentPage(1);
+                            }
+                          },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,7 +149,11 @@ class DrawerOverlay extends ModalRoute<void> {
                       ),
                       Container(
                         child: InkWell(
-                          onTap: () => { print("clicked 3")},
+                          onTap: () {
+                            setState() {
+                              appState.currentPage(2);
+                            }
+                          },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -174,7 +190,11 @@ class DrawerOverlay extends ModalRoute<void> {
                       ),
                       Container(
                         child: InkWell(
-                          onTap: () => { print("clicked 4")},
+                          onTap: () {
+                            //setState() {
+                            //  appState.currentPage(0);
+                            //}
+                          },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,

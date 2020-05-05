@@ -124,17 +124,18 @@ class _ScanPageState extends State<ScanPage> {
                                   borderRadius: BorderRadius.circular(90),
                                   child: InkWell(
                                     onTap: () {
-                                      setState(() {
-                                        appState.changeBottomPage(1);
-                                              appState.saveItem(
-                                                  _getRandomShoppingElement());
-                                      });
-//                                      scan().then((value) => {
-//                                            setState(() {
+//                                      setState(() {
+//                                        appState.changeBottomPage(1);
 //                                              appState.saveItem(
 //                                                  _getRandomShoppingElement());
-//                                            })
-//                                          });
+//                                      });
+                                      scan().then((value) => {
+                                            setState(() {
+                                              appState.saveItem(
+                                                  _getRandomShoppingElement());
+                                            })
+                                          });
+
                                     },
                                     borderRadius: BorderRadius.circular(90),
                                     splashColor: Colors.teal,

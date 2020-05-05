@@ -27,7 +27,6 @@ class HomeBottomNavigationControllerState extends State<HomeBottomNavigationCont
 
   @override
   Widget build(BuildContext context) {
-    print("navigation");
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(

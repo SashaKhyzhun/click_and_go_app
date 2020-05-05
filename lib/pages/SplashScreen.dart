@@ -26,7 +26,7 @@ class SplashScreenState extends State<SplashScreen> {
   Future performAction() {
     return Future.delayed(const Duration(seconds: 2), () {
 
-      Navigator.of(context).push (MaterialPageRoute(builder: (context) => HomeBottomNavigationController()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeBottomNavigationController()));
     });
   }
 
