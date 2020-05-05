@@ -52,7 +52,9 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AppState(),
       child: MaterialApp(
-      theme: ThemeData(
+        debugShowCheckedModeBanner: false,
+
+        theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: SplashScreen(),

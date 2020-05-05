@@ -1,4 +1,3 @@
-import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
 import 'package:clickandgoapp/pages/PaymentsPage.dart';
 import 'package:clickandgoapp/pages/ScanPage.dart';
 import 'package:clickandgoapp/pages/ShoppingPage.dart';
@@ -53,17 +52,11 @@ class HomeBottomNavigationControllerState extends State<HomeBottomNavigationCont
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.crop_free),
-              title: Text('Сканировать')
-          ),
+              icon: Icon(Icons.crop_free), title: Text('Сканировать')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              title: Text('Корзина')
-          ),
+              icon: Icon(Icons.shopping_cart), title: Text('Корзина')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.credit_card),
-              title: Text('Оплата')
-          ),
+              icon: Icon(Icons.credit_card), title: Text('Оплата')),
         ],
       ),
       body: PageStorage(

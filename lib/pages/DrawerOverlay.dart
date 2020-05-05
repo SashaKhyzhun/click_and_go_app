@@ -1,4 +1,7 @@
 import 'package:clickandgoapp/Main.dart';
+import 'package:clickandgoapp/pages/PaymentsPage.dart';
+import 'package:clickandgoapp/pages/ScanPage.dart';
+import 'package:clickandgoapp/pages/ShoppingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -68,9 +71,10 @@ class DrawerOverlay extends ModalRoute<void> {
                       Container(
                         child: InkWell(
                           onTap: () {
-                            setState() {
-                              appState.currentPage(0);
-                            }
+                            Navigator.pop(context);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => ScanPage())
+                            );
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -109,9 +113,16 @@ class DrawerOverlay extends ModalRoute<void> {
                       Container(
                         child: InkWell(
                           onTap: () {
-                            setState() {
-                              appState.currentPage(1);
-                            }
+                            print("clicked menu 1");
+//                            setState(() {
+//                              appState.changeBottomPage(1);
+//                              print("new bottom page = ${appState.currentPage}");
+//                              Navigator.pop(context);
+//                            });
+                            Navigator.pop(context);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => ShoppingPage())
+                            );
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -150,9 +161,16 @@ class DrawerOverlay extends ModalRoute<void> {
                       Container(
                         child: InkWell(
                           onTap: () {
-                            setState() {
-                              appState.currentPage(2);
-                            }
+                            print("clicked menu 2");
+//                            setState(() {
+//                              appState.changeBottomPage(2);
+//                              print("new bottom page = ${appState.currentPage}");
+//                              Navigator.pop(context);
+//                            });
+                            Navigator.pop(context);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => PaymentsPage())
+                            );
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
