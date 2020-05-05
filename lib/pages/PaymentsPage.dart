@@ -20,8 +20,8 @@ class _PaymentsPageState extends State<PaymentsPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 5,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
@@ -30,7 +30,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
             Text(
               "Click&Go | Оплата",
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),
@@ -40,7 +40,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
               },
               child: Icon(
                 Icons.menu,
-                color: Colors.white,
+                color: Colors.black,
               ),
             )
           ],

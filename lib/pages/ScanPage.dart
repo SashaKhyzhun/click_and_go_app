@@ -58,8 +58,8 @@ class _ScanPageState extends State<ScanPage> {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 5,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
@@ -68,7 +68,7 @@ class _ScanPageState extends State<ScanPage> {
             Text(
               "Click&Go | Сканировать",
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),
@@ -83,7 +83,7 @@ class _ScanPageState extends State<ScanPage> {
               },
               child: Icon(
                 Icons.menu,
-                color: Colors.white,
+                color: Colors.black,
               ),
             )
           ],

@@ -36,15 +36,15 @@ class HomeBottomNavigationControllerState extends State<HomeBottomNavigationCont
           });
         },
         currentIndex: appState.currentPage,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.black,
         elevation: 0,
         selectedLabelStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal,
         ),
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
         unselectedLabelStyle: TextStyle(
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal,

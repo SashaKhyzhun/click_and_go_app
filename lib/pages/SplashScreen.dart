@@ -25,7 +25,6 @@ class SplashScreenState extends State<SplashScreen> {
 
   Future performAction() {
     return Future.delayed(const Duration(seconds: 2), () {
-
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeBottomNavigationController()));
     });
   }
@@ -40,16 +39,27 @@ class SplashScreenState extends State<SplashScreen> {
           fit: BoxFit.fill
         ) ,
       ),
-      child: Center(
-        child: Container(
-          margin: EdgeInsets.all(64),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/splash_icon.jpg'),
-                fit: BoxFit.scaleDown
-            ),
+      child: Column(
+        children: <Widget>[
+          Expanded(
+            flex: 3,
+            child: Center(
+            child: Container(
+              margin: EdgeInsets.all(64),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/splash_icon.png'),
+                  fit: BoxFit.scaleDown
+                ),
+              ),
+            )
           ),
-        )
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(),
+          )
+        ],
       )
     );
   }

@@ -28,8 +28,8 @@ class _ShoppingPageState extends State<ShoppingPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 5,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
@@ -38,7 +38,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
             Text(
               "Click&Go | Корзина",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 18,
                 fontWeight: FontWeight.bold),
             ),
@@ -48,7 +48,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
               },
               child: Icon(
                 Icons.menu,
-                color: Colors.white,
+                color: Colors.black,
               ),
             )
           ],
@@ -136,7 +136,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(48, 8, 48, 8),
                         child: Container(
-                          color: Colors.blueAccent,
+                          color: Colors.teal,
                           child: InkWell(
                             onTap: ()  {
                               print("click go to payment");
