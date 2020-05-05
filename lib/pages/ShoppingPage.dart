@@ -16,7 +16,15 @@ class _ShoppingPageState extends State<ShoppingPage> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    var titlePlural = "товар ${ appState.totalAmount == 1 ? "": "(ов)" }";
+    var titlePlural = ""; //"товар ${ appState.totalAmount == 1 ? "": "(ов)" }";
+
+    if (appState.totalAmount == 0) {
+      titlePlural = "товаров";
+    } else if (appState.totalAmount == 1) {
+      titlePlural = "товар";
+    } else {
+      titlePlural = "товара(ов)";
+    }
 
     return Scaffold(
       appBar: AppBar(
