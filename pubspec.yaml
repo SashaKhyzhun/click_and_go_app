@@ -32,7 +32,7 @@ dependencies:
   rxdart: 0.24.0
 
   camera:
-  path_provider:
+  path_provider: ^1.6.5
   path:
   barcode_scan: 3.0.0
 
