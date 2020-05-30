@@ -43,8 +43,7 @@ class _AuthPageState extends State<AuthPage> {
                 color: Colors.teal,
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) =>
-                      HomeBottomNavigationController()));
+                    builder: (context) => HomeBottomNavigationController()));
                 },
                 child: Container(
                   child: Text("Войти в систему", style: TextStyle(color: Colors.white),),
