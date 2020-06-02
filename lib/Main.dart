@@ -1,19 +1,20 @@
 import 'package:clickandgoapp/data/models/ShoppingItem.dart';
 import 'package:clickandgoapp/data/repository/ShoppingRepository.dart';
-import 'package:clickandgoapp/pages/AuthPage.dart';
-import 'package:clickandgoapp/pages/DrawerOverlay.dart';
-import 'package:clickandgoapp/pages/PaymentsPage.dart';
-import 'package:clickandgoapp/pages/ScanPage.dart';
-import 'package:clickandgoapp/pages/ShoppingPage.dart';
 import 'package:clickandgoapp/pages/SplashPage.dart';
 import 'package:flutter/material.dart';
-import 'controllers/MainBottonNavController.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+main() {
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppState()),
+      ],
+      child: Consumer<AppState>(builder: (context, AppState userProvider, _) {
+        return MyApp();
+      })));
+}
 
 class AppState with ChangeNotifier {
-
   ShoppingRepository shoppingCartRepository;
   int _currentPage = 0;
   double _totalPrice;
@@ -26,15 +27,20 @@ class AppState with ChangeNotifier {
   }
 
   get totalPrice => _totalPrice;
+
   get totalAmount => _totalAmount;
+
   get currentPage => _currentPage;
 
   set totalPrice(double val) => _totalPrice = val;
+
   set totalAmount(int val) => _totalAmount = val;
+
   set currentPage(int val) => _currentPage = val;
 
   void changeBottomPage(int index) {
     this.currentPage = index;
+    notifyListeners();
   }
 
   void saveItem(ShoppingItem item) {
@@ -51,20 +57,15 @@ class AppState with ChangeNotifier {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => AppState(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: SplashScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: SplashScreen(),
     );
-
 
 //      ChangeNotifierProvider(
 //      create: (_) => AppState(),
@@ -77,4 +78,3 @@ class MyApp extends StatelessWidget {
 //    );
   }
 }
-

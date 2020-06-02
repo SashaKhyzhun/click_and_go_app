@@ -26,14 +26,12 @@ class HomeBottomNavigationControllerState extends State<HomeBottomNavigationCont
 
   @override
   Widget build(BuildContext context) {
-    final appState = Provider.of<AppState>(context);
+    final appState = Provider.of<AppState>(context, listen: false);
 
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) {
-          setState(() {
-            appState.changeBottomPage(index);
-          });
+          Provider.of<AppState>(context, listen: false).changeBottomPage(index);
         },
         currentIndex: appState.currentPage,
         backgroundColor: Colors.white,
